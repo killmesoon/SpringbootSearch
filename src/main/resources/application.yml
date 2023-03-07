@@ -4,16 +4,18 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: Bigdata123
+    password: passwd
     url: jdbc:mysql://localhost:3306/test_hb?characterEncoding=UTF-8&useSSL=false
   jpa:
     properties:
       hibernate:
         search:
+          infinispan:
+            configuration_resourcename: default-infinispan.xml
 #          model_mapping: org.example.config.CustomSearchMappingFactory
           default:
-            directory_provider: filesystem
-            indexBase: D:\\index
-    show-sql: on
+            directory_provider: infinispan
+#            indexBase: D:\\index
+#    show-sql: on
 
 

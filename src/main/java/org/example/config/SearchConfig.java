@@ -12,9 +12,9 @@ import javax.persistence.Persistence;
 @Configuration
 @Slf4j
 public class SearchConfig {
-//    @Bean
-//    public EntityManager entityManager() {
-//        EntityManagerFactory factory = Persistence.createEntityManagerFactory("test");
-//        return factory.createEntityManager();
-//    }
+    @Bean
+    public EntityManager entityManager(EntityManagerFactory entityManagerFactory) {
+        log.info("index init........");
+        return entityManagerFactory.createEntityManager();
+    }
 }
